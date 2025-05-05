@@ -1,18 +1,14 @@
 #include <iostream>
 using namespace std;
-
 int main() {
     string correctCardNumber = "1234";
     string correctPIN = "1111";
     string enteredCardNumber, enteredPIN;
     bool loggedIn = false;
-
     double balance = 1000.0; // Starting balance
     int option;
     double amount;
-
     cout << "Welcome to the ATM System\n";
-
     // Login loop
     while (!loggedIn) {
         cout << "\nPlease insert your card.\n";
@@ -20,7 +16,6 @@ int main() {
         cin >> enteredCardNumber;
         cout << "Enter PIN: ";
         cin >> enteredPIN;
-
         if (enteredCardNumber == correctCardNumber && enteredPIN == correctPIN) {
             cout << "\nLogin successful!\n";
             loggedIn = true;
@@ -28,7 +23,6 @@ int main() {
             cout << "Incorrect Card Number or PIN. Please try again.\n";
         }
     }
-
     do {
         // Display menu
         cout << "\nChoose an option:\n";
@@ -38,13 +32,11 @@ int main() {
         cout << "4. Exit\n";
         cout << "Enter your choice: ";
         cin >> option;
-
         switch (option) {
             case 1:
                 // Check balance
                 cout << "Your balance is: $" << balance << "\n";
                 break;
-
             case 2:
                 // Deposit money
                 cout << "Enter amount to deposit: $";
@@ -56,7 +48,6 @@ int main() {
                     cout << "Invalid amount. Try again.\n";
                 }
                 break;
-
             case 3:
                 // Withdraw money
                 cout << "Enter amount to withdraw: $";
@@ -70,17 +61,13 @@ int main() {
                     cout << "Invalid amount. Try again.\n";
                 }
                 break;
-
             case 4:
                 // Exits
                 cout << "Thank you for using the ATM. Goodbye!\n";
                 break;
-
             default:
                 cout << "Invalid option. Please try again.\n";
         }
-
     } while (option != 4); // Loop until user chooses to exit
-
     return 0;
 }
